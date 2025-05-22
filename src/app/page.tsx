@@ -123,7 +123,9 @@ const ForShieldLawFirm = () => {
               {/* PNG Logo Placeholder - Replace with actual logo */}
               <div className="w-32 h-32 mx-auto bg-gradient-to-br from-sky-400 to-blue-500 rounded-3xl flex items-center justify-center shadow-2xl transform animate-scale-in">
                 <Image
-                  src="logo.png"
+                  src="/logo.png"
+                  width={100}
+                  height={100}
                   alt="For Shield Law Firm"
                   className="w-28 h-28 rounded-3xl"
                 />
@@ -160,7 +162,9 @@ const ForShieldLawFirm = () => {
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
                   <Image
-                    src="logo.png"
+                    src="/logo.png"
+                    width={100}
+                    height={100}
                     alt="For Shield Law Firm"
                     className="w-10 h-10 rounded-xl"
                   />
@@ -180,7 +184,9 @@ const ForShieldLawFirm = () => {
                 <div className="w-36 h-36 mx-auto rounded-3xl bg-white/80 backdrop-blur-xl border border-sky-200 flex items-center justify-center shadow-xl">
                   <div className="w-24 h-24 bg-gradient-to-br from-sky-400 via-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
                     <Image
-                      src="logo.png"
+                      src="/logo.png"
+                      width={100}
+                      height={100}
                       alt="For Shield Law Firm"
                       className="w-28 h-28 rounded-2xl"
                     />{" "}
