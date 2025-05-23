@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Phone, MapPin, Building, ExternalLink, FileText } from "lucide-react";
+import { Phone, MapPin, ExternalLink, FileText } from "lucide-react";
 import Image from "next/image";
 
 interface LinkItem {
@@ -36,16 +36,16 @@ const ForShieldLawFirm = () => {
       href: "/CV.pdf",
       color: "from-indigo-400 to-purple-500",
     },
+    // {
+    //   id: "3",
+    //   title: "Head Office",
+    //   description: "Main headquarters for strategic and legal operations.",
+    //   icon: <Building className="w-6 h-6" />,
+    //   href: "https://www.google.com/maps/search/?api=1&query=Jl.Bend.Jatiluhur+No.18",
+    //   color: "from-blue-400 to-indigo-500",
+    // },
     {
       id: "3",
-      title: "Head Office",
-      description: "Main headquarters for strategic and legal operations.",
-      icon: <Building className="w-6 h-6" />,
-      href: "https://www.google.com/maps/search/?api=1&query=Jl.Bend.Jatiluhur+No.18",
-      color: "from-blue-400 to-indigo-500",
-    },
-    {
-      id: "4",
       title: "Operational Office",
       description:
         "Regional branches ensuring effective client service delivery.",
