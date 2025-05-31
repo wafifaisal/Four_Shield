@@ -248,14 +248,6 @@ const ForShieldLawFirm = () => {
               <div className="relative mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 to-blue-500/20 rounded-2xl blur-xl" />
                 <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse mr-2" />
-                    <span className="text-emerald-400 text-sm font-semibold uppercase tracking-wider">
-                      Our Mission
-                    </span>
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse ml-2" />
-                  </div>
-
                   <div className="space-y-3">
                     <div className="group">
                       <p className="text-white text-lg font-medium leading-relaxed animate-fade-in-delayed">
@@ -266,7 +258,7 @@ const ForShieldLawFirm = () => {
                           </span>
                           <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-300 to-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                         </span>{" "}
-                        the rights of clients
+                        the rights of the clients
                       </p>
                     </div>
 
@@ -281,11 +273,11 @@ const ForShieldLawFirm = () => {
                         We are{" "}
                         <span className="relative inline-block">
                           <span className="text-transparent bg-gradient-to-r from-green-300 to-green-400 bg-clip-text font-bold">
-                            Strong Experts
+                            Strong
                           </span>
-                          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-300 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-300 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                         </span>{" "}
-                        in Financial Services Sectors
+                        in Financial Services Sector
                       </p>
                     </div>
                   </div>
