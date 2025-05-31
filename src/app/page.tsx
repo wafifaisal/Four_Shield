@@ -1,7 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Phone, MapPin, ExternalLink, FileText } from "lucide-react";
+import {
+  Phone,
+  MapPin,
+  ExternalLink,
+  FileText,
+  ChevronDown,
+} from "lucide-react";
 import Image from "next/image";
 
 interface LinkItem {
@@ -18,6 +24,7 @@ const ForShieldLawFirm = () => {
   const [showLogoIntro, setShowLogoIntro] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(true);
 
   const links: LinkItem[] = [
     {
@@ -36,14 +43,6 @@ const ForShieldLawFirm = () => {
       href: "/CV.pdf",
       color: "from-indigo-400 to-purple-500",
     },
-    // {
-    //   id: "3",
-    //   title: "Head Office",
-    //   description: "Main headquarters for strategic and legal operations.",
-    //   icon: <Building className="w-6 h-6" />,
-    //   href: "https://www.google.com/maps/search/?api=1&query=Jl.Bend.Jatiluhur+No.18",
-    //   color: "from-blue-400 to-indigo-500",
-    // },
     {
       id: "3",
       title: "Operational Office",
@@ -54,6 +53,22 @@ const ForShieldLawFirm = () => {
       color: "from-blue-400 to-indigo-500",
     },
   ];
+
+  const handleScrollDown = () => {
+    window.scrollBy({
+      top: window.innerHeight * 0.8,
+      behavior: "smooth",
+    });
+  };
+
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // Hide scroll button when near bottom of page
+    setShowScrollButton(scrollTop + windowHeight < documentHeight - 100);
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -75,6 +90,17 @@ const ForShieldLawFirm = () => {
       clearTimeout(logoTimer);
     };
   }, []);
+
+  // Separate useEffect for scroll listener
+  useEffect(() => {
+    if (showContent) {
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [showContent]);
 
   if (!mounted) return null;
 
@@ -153,6 +179,23 @@ const ForShieldLawFirm = () => {
         </div>
       )}
 
+      {/* Scroll Down Button */}
+      {showContent && showScrollButton && (
+        <button
+          onClick={handleScrollDown}
+          className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group hover:scale-110 animate-bounce-slow"
+          aria-label="Scroll down"
+        >
+          <ChevronDown className="w-6 h-6 text-white group-hover:animate-bounce" />
+
+          {/* Ripple Effect */}
+          <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-300" />
+
+          {/* Outer Ring Animation */}
+          <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-ping" />
+        </button>
+      )}
+
       {/* Main Content */}
       {showContent && (
         <div className="relative z-10 animate-fade-in-up">
@@ -201,10 +244,53 @@ const ForShieldLawFirm = () => {
                 FOR SHIELD
               </h1>
               <h2 className="text-xl font-bold text-sky-700 mb-4">LAW FIRM</h2>
-              <p className="text-white text-base max-w-sm mx-auto leading-relaxed">
-                For Shield Law Firm is a legal firm commited to protecting the
-                rights and inter
-              </p>
+              {/* Enhanced Description dengan animasi typing dan highlight */}
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-400/20 to-blue-500/20 rounded-2xl blur-xl" />
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse mr-2" />
+                    <span className="text-emerald-400 text-sm font-semibold uppercase tracking-wider">
+                      Our Mission
+                    </span>
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse ml-2" />
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="group">
+                      <p className="text-white text-lg font-medium leading-relaxed animate-fade-in-delayed">
+                        We{" "}
+                        <span className="relative inline-block">
+                          <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text font-bold">
+                            Strongly Protect
+                          </span>
+                          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-300 to-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                        </span>{" "}
+                        the rights of clients
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-center">
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-50" />
+                      <div className="mx-3 text-white/70">∙</div>
+                      <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-50" />
+                    </div>
+
+                    <div className="group">
+                      <p className="text-white text-lg font-medium leading-relaxed animate-fade-in-delayed-2">
+                        We are{" "}
+                        <span className="relative inline-block">
+                          <span className="text-transparent bg-gradient-to-r from-green-300 to-green-400 bg-clip-text font-bold">
+                            Strong Experts
+                          </span>
+                          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-300 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                        </span>{" "}
+                        in Financial Services Sectors
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Links Section */}
@@ -334,6 +420,22 @@ const ForShieldLawFirm = () => {
           }
         }
 
+        @keyframes bounce-slow {
+          0%,
+          20%,
+          50%,
+          80%,
+          100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-8px);
+          }
+          60% {
+            transform: translateY(-4px);
+          }
+        }
+
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
@@ -364,6 +466,29 @@ const ForShieldLawFirm = () => {
 
         .animate-fade-in-up {
           animation: fade-in-up 0.6s ease-out;
+        }
+
+        .animate-bounce-slow {
+          animation: bounce-slow 3s ease-in-out infinite;
+        }
+
+        @keyframes fade-in-delayed {
+          0% {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in-delayed {
+          animation: fade-in-delayed 0.8s ease-out 0.5s both;
+        }
+
+        .animate-fade-in-delayed-2 {
+          animation: fade-in-delayed 0.8s ease-out 0.8s both;
         }
       `}</style>
     </div>
