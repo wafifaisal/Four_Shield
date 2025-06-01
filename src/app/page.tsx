@@ -32,7 +32,7 @@ const ForShieldLawFirm = () => {
       title: "Whatsapp",
       description: "(+62) SARJITO, S.H., S.E., MBA., M.Kn",
       icon: <Phone className="w-6 h-6" />,
-      href: "https://wa.me/62811995443?text=Hello%2C%20thank%20you%20for%20reaching%20out.%20How%20may%20I%20assist%20you%3F",
+      href: "https://wa.me/62811995443?text=Hello%2C%20thank%20you%20for%20reaching%20out.%20Anything%20I%20can%20help%20you%3F",
       color: "from-rose-400 to-pink-500",
     },
     {
