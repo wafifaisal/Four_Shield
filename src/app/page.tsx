@@ -253,29 +253,18 @@ const ForShieldLawFirm = () => {
                       <p className="text-white text-lg font-medium leading-relaxed animate-fade-in-delayed">
                         We{" "}
                         <span className="relative inline-block">
-                          <span className="text-transparent bg-gradient-to-r from-yellow-300 to-orange-400 bg-clip-text font-bold">
+                          <span className="text-transparent text-white bg-clip-text font-bold">
                             Strongly Protect
-                          </span>
-                          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-300 to-orange-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                          </span>{" "}
                         </span>{" "}
-                        the rights of the clients
+                        the rights of the clients and
                       </p>
-                    </div>
-
-                    <div className="flex items-center justify-center">
-                      <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-50" />
-                      <div className="mx-3 text-white/70">∙</div>
-                      <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-50" />
-                    </div>
-
-                    <div className="group">
                       <p className="text-white text-lg font-medium leading-relaxed animate-fade-in-delayed-2">
                         We are{" "}
                         <span className="relative inline-block">
-                          <span className="text-transparent bg-gradient-to-r from-green-300 to-green-400 bg-clip-text font-bold">
+                          <span className="text-transparent text-white bg-clip-text font-bold">
                             Strong
                           </span>
-                          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-green-300 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                         </span>{" "}
                         in Financial Services Sector
                       </p>
